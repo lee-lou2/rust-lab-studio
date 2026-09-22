@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#09090b"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>Rust Lab Studio</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div id="app">
+  <section id="home" class="screen">
+    <div class="ambient" aria-hidden="true"></div>
+    <header class="home-head">
+      <div class="brand-mark">RL</div>
+      <div>
+        <p class="kicker">Rust Lab Studio</p>
+        <h1>오늘도 한 강만<br/>제대로</h1>
+      </div>
+    </header>
+    <p class="lead" id="metaLine">불러오는 중…</p>
+
+    <button type="button" class="resume" id="resumeBtn">
+      <span class="resume-label">이어서 보기</span>
+      <span class="resume-title" id="resumeTitle">—</span>
+      <span class="resume-go">▶</span>
+    </button>
+
+    <div class="seg" role="tablist">
+      <button type="button" class="seg-item active" data-filter="all">전체</button>
+      <button type="button" class="seg-item" data-filter="unread">안 봄</button>
+      <button type="button" class="seg-item" data-filter="video">영상</button>
+    </div>
+
+    <ol id="list" class="rail"></ol>
+  </section>
+
+  <section id="watch" class="screen watch hidden">
+    <div class="watch-frame">
+      <div class="watch-top">
+        <button type="button" class="ghost" id="backHome">목록</button>
+        <div class="watch-progress">
+          <div class="bar"><i id="barFill"></i></div>
+          <span id="watchCount">0/0</span>
+        </div>
+      </div>
+
+      <div class="cinema" id="cinema"></div>
+
+      <div class="watch-panel">
+        <p class="watch-kicker" id="watchKicker"></p>
+        <h2 id="watchTitle"></h2>
+        <div id="watchBody" class="prose"></div>
+      </div>
+    </div>
+
+    <div class="transport">
+      <button type="button" class="tr-btn" id="prevBtn" aria-label="이전 강의">
+        <b>←</b><small>이전</small>
+      </button>
+      <button type="button" class="tr-btn next" id="nextBtn" aria-label="다음 강의">
+        <small>다음</small><b>→</b>
+      </button>
+    </div>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
